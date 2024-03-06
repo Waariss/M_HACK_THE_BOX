@@ -4,9 +4,10 @@
 
 ## HackTheBox Lab
 
-* [Surveillance](hackthebox-lab/surveillance.md)
+* [Devvortex](hackthebox-lab/devvortex.md)
 * [Perfection](hackthebox-lab/perfection.md)
 * [Monitored](hackthebox-lab/monitored.md)
+* [Surveillance](hackthebox-lab/surveillance.md)
 
 ## picoCTF
 

