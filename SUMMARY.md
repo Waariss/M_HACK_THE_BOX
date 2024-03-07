@@ -9,6 +9,10 @@
 * [Monitored](hackthebox-lab/monitored.md)
 * [Surveillance](hackthebox-lab/surveillance.md)
 
+## TryHackME
+
+* [Simple CTF](tryhackme/simple-ctf.md)
+
 ## picoCTF
 
 * [GET aHEAD](picoctf/get-ahead.md)
