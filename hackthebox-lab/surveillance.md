@@ -128,7 +128,6 @@ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 mkdir -p ~/.ssh
 chmod 700 ~/.ssh
 touch ~/.ssh/authorized_keys
-~
 
 #Your localmachines
 cat ~/.ssh/id_rsa.pub

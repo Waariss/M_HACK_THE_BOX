@@ -11,6 +11,7 @@
 
 ## TryHackME
 
+* [Blog](tryhackme/blog.md)
 * [Simple CTF](tryhackme/simple-ctf.md)
 
 ## picoCTF

