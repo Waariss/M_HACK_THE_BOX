@@ -310,6 +310,10 @@ sudo vim -c ':!/bin/sh'
 
 <figure><img src="../.gitbook/assets/image (124).png" alt=""><figcaption><p>W3ll d0n3. You made it!</p></figcaption></figure>
 
+```
+ANS: W3ll d0n3. You made it!
+```
+
 ## Follow Me
 
 * **LinkedIn**: [https://www.linkedin.com/in/waris-damkham/](https://www.linkedin.com/in/waris-damkham/)
