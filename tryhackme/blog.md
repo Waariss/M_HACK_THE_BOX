@@ -24,7 +24,7 @@ The images used in this room have been used with the author's permission or in a
 nmap -A -Pn 10.10.89.129
 ```
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 I found out some smb, let use `enum4linux` Thank ([https://book.hacktricks.xyz/network-services-pentesting/pentesting-smb#ipcusd-share](https://book.hacktricks.xyz/network-services-pentesting/pentesting-smb#ipcusd-share))
 
@@ -34,7 +34,7 @@ I found out some smb, let use `enum4linux` Thank ([https://book.hacktricks.xyz/n
 enum4linux -a 10.10.89.129
 ```
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>Found BillySMB</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Found BillySMB</p></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption><p>Found bjoel username</p></figcaption></figure>
 
