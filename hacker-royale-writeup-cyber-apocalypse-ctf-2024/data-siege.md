@@ -54,6 +54,16 @@ This discovery paved the way to rewrite the decryption function in Python, using
 
 <figure><img src="../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
 
+* **Import Necessary Modules**: It starts by importing the necessary modules from the `pycryptodome` library, which provides cryptographic operations like AES encryption and decryption, padding mechanisms, and key derivation functions.
+* **Define the `decrypt` function**: This function is responsible for decrypting a given piece of cipher text using a specified encryption key.
+  * **Salt**: A predefined salt (`salt = bytes([...])`) is used, which is essential in the key derivation process to produce a unique key based on the encryption key and salt.
+  * **Key Derivation**: It uses the `PBKDF2` (Password-Based Key Derivation Function 2) algorithm to derive a 48-byte key and initialization vector (IV) from the encryption key and salt. The `dkLen=48` specifies the desired length of the derived key, and `count=1000` specifies the iteration count, affecting the computation time and security level.
+  * **Key and IV**: The first 32 bytes of the derived data are used as the AES key, and the next 16 bytes are used as the IV for the CBC mode.
+  * **Base64 Decoding**: The cipher text, assumed to be base64 encoded, is decoded back into its original binary form before decryption.
+  * **Decryption**: An AES cipher is created using the derived key and IV, and the cipher text is decrypted. The `unpad` function is then used to remove any padding added to the message during encryption, ensuring the plaintext is restored to its original form.
+  * **Decoding**: The decrypted data is assumed to be UTF-8 encoded and is decoded back into a string.
+  * **Error Handling**: The function includes error handling to catch and report any issues that occur during the decryption process.
+
 ### **Flag**
 
 With the decryption function ready, applying it to the previously found encrypted communications was the final hurdle. This effort was rewarded with the discovery of the first and second parts of the flag, piecing together the puzzle.

@@ -62,6 +62,15 @@ The next step involved decoding the contents of the `rj1893rj1joijdkajwda` file 
 
 <figure><img src="../.gitbook/assets/image (36).png" alt=""><figcaption></figcaption></figure>
 
+* **Import AES Cipher and base64 Decoding**: The script begins by importing the necessary components for AES decryption from the `Crypto.Cipher` module and base64 decoding functionality.
+* **Decode AES Key**: It decodes the AES key from base64 format to bytes, making it usable for decryption.
+* **Decode Encrypted Data**: Similarly, the encrypted data is also base64 decoded back into its original binary format.
+* **Extract IV and Ciphertext**: The initial vector (IV) is assumed to be the first 16 bytes of the encrypted data, with the remainder being the actual ciphertext. This IV is used to ensure that the encryption of similar plaintext blocks results in different ciphertexts.
+* **Initialize AES Cipher**: An AES cipher object is created with the decoded AES key, set to use CBC (Cipher Block Chaining) mode, and initialized with the extracted IV.
+* **Decrypt Data**: The ciphertext is decrypted using the initialized cipher, resulting in the original plaintext but potentially with added padding.
+* **Decode and Clean Decrypted Data**: Attempts to decode the decrypted data into a readable string format. It removes padding manually by stripping specific padding bytes (`\x0c`, `\x0b`, `\x0a`, etc.) from the end of the plaintext. This manual approach to padding removal is not standard and assumes a specific padding pattern that may not apply to all encryption scenarios.
+* **Error Handling**: If decoding fails (e.g., due to incorrect padding or encoding issues), it catches the exception and prints an error message.
+
 This decryption process unearthed details including an ID, Email, GlobalName, and Token.
 
 <figure><img src="../.gitbook/assets/AES.png" alt=""><figcaption></figcaption></figure>
