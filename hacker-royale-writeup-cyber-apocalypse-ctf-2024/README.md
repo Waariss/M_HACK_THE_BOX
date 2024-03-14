@@ -20,7 +20,27 @@ Our writeup includes a comprehensive breakdown of over 50 challenges, categorize
 
 ### Conclusion
 
-As the dust settles on the virtual battlegrounds of Hacker Royale, our team at **KPMG Thailand** emerged with a tale of digital valiance. Pwned flags: 9. Our rank: 195th. With 10,525 points to our name, we tackled 35 out of 67 challenges, each representing a milestone in our relentless pursuit of cybersecurity excellence. After pwned another flag, bringing our total to 10, I gave one flag to my friend, keeping our count at 9.
+As the dust settles on the virtual battlegrounds of Hacker Royale, our team at **KPMG Thailand** emerged with a tale of digital valiance.&#x20;
+
+**Pwned flags: 10**
+
+* **Forensic 3 challenges**
+  * It Has Begun - Very Easy
+  * Fake Boost - Easy
+  * Data Siege - Medium
+* **Web 3 challenges**
+  * TimeKORP - Very Easy
+  * Flag Command - Very Easy
+  * KORP Terminal - Very Easy
+* **Crypto 2 challenges**
+  * Primary Knowledge - Very Easy
+  * Blunt - Easy
+* **Misc 1 challenges**
+  * Stop Drop and Roll - Very Easy
+* **Hardware 1 challenges**
+  * BunnyPass - Very Easy
+
+Our rank: 227th. With 10,525 points to our name, we tackled 35 out of 67 challenges, each representing a milestone in our relentless pursuit of cybersecurity excellence. After pwned another flag, bringing our total to 10, I gave one flag to my friend, keeping our count at 9.
 
 <figure><img src="../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
 
