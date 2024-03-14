@@ -4,7 +4,7 @@
 
 This writeup details the exploitation process of the "Monitored" box on Hack The Box. The challenge is categorized as medium difficulty and involves several stages, from initial access via SNMP enumeration to gaining root access through service misconfiguration.
 
-<figure><img src="../.gitbook/assets/image (33).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (33) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Enumeration
 
@@ -28,13 +28,13 @@ echo "10.10.11.248 nagios.monitored.htb" | sudo tee -a /etc/hosts
 dirsearch -u https://nagios.monitored.htb/nagiosxi/
 ```
 
-<figure><img src="../.gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (35) (1).png" alt=""><figcaption></figcaption></figure>
 
 ```
 dirsearch -u https://nagios.monitored.htb/nagiosxi/api/v1
 ```
 
-<figure><img src="../.gitbook/assets/image (36).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (36) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Exploitation
 
@@ -75,7 +75,7 @@ sqlmap -u "https://nagios.monitored.htb//nagiosxi/admin/banner_message-ajaxhelpe
 * Login as USERNAME:PASSWORD
 * Go the desktop dashboard
 
-<figure><img src="../.gitbook/assets/image (37).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (37) (1).png" alt=""><figcaption></figcaption></figure>
 
 * go https://nagios.monitored.htb/nagiosxi/includes/components/ccm/xi-index.php
 

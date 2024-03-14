@@ -8,7 +8,7 @@ Tags: `picoCTF2021` `Web Exploitation`
 
 This website looks familiar... Log in as admin Site: [http://mercury.picoctf.net:65261/](http://mercury.picoctf.net:65261/) Filter: [http://mercury.picoctf.net:65261/filter.php](http://mercury.picoctf.net:65261/filter.php)
 
-<figure><img src="../.gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (28) (1).png" alt=""><figcaption></figcaption></figure>
 
 The filter of this round: or and true false union like = > < ; -- /\* \*/ admin
 
@@ -23,9 +23,9 @@ SELECT username, password FROM users WHERE username='ad'||'min' AND password='1'
 
 ## Flag
 
-<figure><img src="../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (29) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (30).png" alt=""><figcaption><p><code>picoCTF{0n3_m0r3_t1m3_e2db86ae880862ad471aa4c93343b2bf}</code></p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (30) (1).png" alt=""><figcaption><p><code>picoCTF{0n3_m0r3_t1m3_e2db86ae880862ad471aa4c93343b2bf}</code></p></figcaption></figure>
 
 ## Follow Me
 

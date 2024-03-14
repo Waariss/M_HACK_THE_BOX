@@ -10,7 +10,7 @@ Connect to this PostgreSQL server and find the flag!
 
 Additional details will be available after launching your challenge instance.
 
-<figure><img src="../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (18) (1).png" alt=""><figcaption></figcaption></figure>
 
 ```sql
 SELECT table_schema, table_name
@@ -18,7 +18,7 @@ FROM information_schema.tables
 WHERE table_type = 'BASE TABLE' AND table_schema NOT IN ('pg_catalog', 'information_schema');
 ```
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ```sql
 SELECT * FROM public.flags;
@@ -26,7 +26,7 @@ SELECT * FROM public.flags;
 
 ## Flag
 
-<figure><img src="../.gitbook/assets/image (2) (1).png" alt=""><figcaption><p>picoCTF{L3arN_S0m3_5qL_t0d4Y_73b0678f}</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption><p>picoCTF{L3arN_S0m3_5qL_t0d4Y_73b0678f}</p></figcaption></figure>
 
 ## Follow Me
 

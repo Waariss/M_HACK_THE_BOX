@@ -10,6 +10,8 @@
   * [Fake Boost](hacker-royale-writeup-cyber-apocalypse-ctf-2024/fake-boost.md)
   * [Primary Knowledge](hacker-royale-writeup-cyber-apocalypse-ctf-2024/primary-knowledge.md)
   * [Blunt](hacker-royale-writeup-cyber-apocalypse-ctf-2024/blunt.md)
+  * [Data Siege](hacker-royale-writeup-cyber-apocalypse-ctf-2024/data-siege.md)
+  * [BunnyPass](hacker-royale-writeup-cyber-apocalypse-ctf-2024/bunnypass.md)
 
 ## HackTheBox Lab
 

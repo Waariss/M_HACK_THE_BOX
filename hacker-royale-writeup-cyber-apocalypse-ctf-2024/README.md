@@ -4,7 +4,7 @@
 
 Dive into the gritty details of our Hacker Royale journey in the thrilling Cyber Apocalypse CTF 2024. In this gripping narrative, we unveil our strategic maneuvers and technical prowess that propelled us in the midst of "The Fray," the ultimate battleground of the most astute and ruthless factions, orchestrated by the omnipresent KORP™.
 
-
+<figure><img src="../.gitbook/assets/Pasted image (1).png" alt=""><figcaption></figcaption></figure>
 
 ### About the Event
 
@@ -20,9 +20,9 @@ Our writeup includes a comprehensive breakdown of over 50 challenges, categorize
 
 ### Conclusion
 
-As the dust settles on the virtual battlegrounds of Hacker Royale, our team at **KPMG Thailand** emerged with a tale of digital valiance. Pwned flags: 8. Our rank: 195th. With 9650 points to our name, we tackled 32 out of 67 challenges, each representing a milestone in our relentless pursuit of cybersecurity excellence.
+As the dust settles on the virtual battlegrounds of Hacker Royale, our team at **KPMG Thailand** emerged with a tale of digital valiance. Pwned flags: 9. Our rank: 195th. With 10,525 points to our name, we tackled 35 out of 67 challenges, each representing a milestone in our relentless pursuit of cybersecurity excellence. After pwned another flag, bringing our total to 10, I gave one flag to my friend, keeping our count at 9.
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
 
 ## Follow Me
 

@@ -12,6 +12,6 @@ Stay updated with my latest writeups and professional insights by following me o
 * GitHub: [https://github.com/Waariss](https://github.com/Waariss)
 * Personal Website: [https://waris-damkham.netlify.app/](https://waris-damkham.netlify.app/)
 
-<figure><img src=".gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/image (20) (1).png" alt=""><figcaption></figcaption></figure>
 
 Thank you for stopping by, and don't hesitate to reach out!
