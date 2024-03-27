@@ -4,7 +4,7 @@
 
 Dive into the gritty details of our Hacker Royale journey in the thrilling Cyber Apocalypse CTF 2024. In this gripping narrative, we unveil our strategic maneuvers and technical prowess that propelled us in the midst of "The Fray," the ultimate battleground of the most astute and ruthless factions, orchestrated by the omnipresent KORP™.
 
-<figure><img src="../.gitbook/assets/Pasted image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Pasted image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### About the Event
 
@@ -25,24 +25,24 @@ As the dust settles on the virtual battlegrounds of Hacker Royale, our team at *
 **Pwned flags: 10**
 
 * **Forensic 3 challenges**
-  * It Has Begun - Very Easy
-  * Fake Boost - Easy
-  * Data Siege - Medium
+  * [It Has Begun](it-has-begun.md) - Very Easy
+  * [Fake Boost](fake-boost.md) - Easy
+  * [Data Siege](data-siege.md) - Medium
 * **Web 3 challenges**
-  * TimeKORP - Very Easy
-  * Flag Command - Very Easy
-  * KORP Terminal - Very Easy
+  * [TimeKORP](timekorp.md) - Very Easy
+  * [Flag Command](flag-command.md) - Very Easy
+  * [KORP Terminal](korp-terminal.md) - Very Easy
 * **Crypto 2 challenges**
-  * Primary Knowledge - Very Easy
-  * Blunt - Easy
+  * [Primary Knowledge](primary-knowledge.md) - Very Easy
+  * [Blunt](blunt.md) - Easy
 * **Misc 1 challenges**
-  * Stop Drop and Roll - Very Easy
+  * [Stop Drop and Roll](stop-drop-and-roll.md) - Very Easy
 * **Hardware 1 challenges**
-  * BunnyPass - Very Easy
+  * [BunnyPass](bunnypass.md) - Very Easy
 
 Our rank: 227th. With 10,525 points to our name, we tackled 35 out of 67 challenges, each representing a milestone in our relentless pursuit of cybersecurity excellence. After pwned another flag, bringing our total to 10, I gave one flag to my friend, keeping our count at 9.
 
-<figure><img src="../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (14) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Follow Me
 

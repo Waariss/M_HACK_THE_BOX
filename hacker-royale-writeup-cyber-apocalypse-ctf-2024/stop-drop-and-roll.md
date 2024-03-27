@@ -24,7 +24,7 @@ Upon connecting to the service via `netcat`, the game described three distinct s
 
 The twist came with combined scenarios, where multiple commands had to be sent back in sequence.
 
-<figure><img src="../.gitbook/assets/Pasted image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Pasted image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### **Solution Strategy**
 
@@ -36,7 +36,58 @@ To tackle this challenge efficiently, manual interaction was not practical. Thus
 * Send the response back to the server.
 * Repeat the process until the server sent the flag, signaling the challenge's completion.
 
-<figure><img src="../.gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure>
+```python
+import socket
+import re
+
+def main():
+    host = "83.136.254.16"
+    port = 30311
+
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+        s.connect((host, port))
+        s.settimeout(2)  
+
+        def send_message(message):
+            print(f"Sending: {message}")
+            s.sendall(message.encode() + b"\n")
+        
+        def receive_until_prompt(prompt="Are you ready? (y/n)"):
+            received_data = ""
+            while True:
+                try:
+                    data = s.recv(1024).decode()
+                    if not data:
+                        break
+                    received_data += data
+                    if "HTB{" in received_data:
+                        print("Flag detected, stopping:", received_data)
+                        return "STOP"
+                    if prompt in received_data:
+                        break
+                except socket.timeout:
+                    break
+            print("Received:", received_data)
+            return received_data
+
+        receive_until_prompt()
+
+        send_message("y")
+
+        while True:
+            game_data = receive_until_prompt("What do you do?")
+            if game_data == "STOP":
+                print("Flag found, exiting...")
+                break
+            if "What do you do?" in game_data:
+                scenarios = re.findall(r'(GORGE|PHREAK|FIRE)', game_data)
+                responses = {'GORGE': 'STOP', 'PHREAK': 'DROP', 'FIRE': 'ROLL'}
+                response = '-'.join([responses[scenario] for scenario in scenarios])
+                send_message(response)
+
+if __name__ == "__main__":
+    main()
+```
 
 ### **Flag**
 

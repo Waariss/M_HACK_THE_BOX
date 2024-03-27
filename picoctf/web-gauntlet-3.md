@@ -8,7 +8,7 @@ Tags: `picoCTF2021` `Web Exploitation`
 
 Last time, I promise! Only 25 characters this time. Log in as admin Site: [http://mercury.picoctf.net:8650/](http://mercury.picoctf.net:8650/) Filter: [http://mercury.picoctf.net:8650/filter.php](http://mercury.picoctf.net:8650/filter.php)
 
-<figure><img src="../.gitbook/assets/image (5) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 The filter of this round: or and true false union like = > < ; -- /\* \*/ admin
 
@@ -23,9 +23,9 @@ SELECT username, password FROM users WHERE username='ad'||'min' AND password='1'
 
 ## Flag
 
-<figure><img src="../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption><p><code>picoCTF{k3ep_1t_sh0rt_6fdd78c92c7f26a10acd3ece176dea4d}</code></p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4) (1) (1) (1).png" alt=""><figcaption><p><code>picoCTF{k3ep_1t_sh0rt_6fdd78c92c7f26a10acd3ece176dea4d}</code></p></figcaption></figure>
 
 ## Follow Me
 

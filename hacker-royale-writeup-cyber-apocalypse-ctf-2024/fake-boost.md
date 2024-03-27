@@ -14,23 +14,23 @@ In the shadow of The Fray, a new test called ""Fake Boost"" whispers promises of
 
 After downloading a `capture.pcapng` file and opening it with Wireshark, the focus was to examine the exported objects within this network communication.&#x20;
 
-<figure><img src="../.gitbook/assets/image (27).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (27) (1).png" alt=""><figcaption></figcaption></figure>
 
 This exploration led to the discovery of three distinct files.
 
-<figure><img src="../.gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (28) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### **Discovery of Files**
 
-<figure><img src="../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (29) (1).png" alt=""><figcaption></figcaption></figure>
 
 **freediscordnitro**: This file was full of base64 characters, which initially seemed undecodable. Opting to move forward, it was set aside for later examination.
 
-<figure><img src="../.gitbook/assets/image (30).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (30) (1).png" alt=""><figcaption></figcaption></figure>
 
 **rj1893rj1joijdkajwda**: Enclosed within this file were characters that appeared to be decode with base 64 and encrypted with AES.
 
-<figure><img src="../.gitbook/assets/image (31).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (31) (1).png" alt=""><figcaption></figcaption></figure>
 
 **rj1893rj1joijdkajwda(1)**: Merely containing the text "OK," it didn't present anything of immediate interest.
 
@@ -40,13 +40,13 @@ This exploration led to the discovery of three distinct files.
 
 Persisting with the `freediscordnitro` file, a breakthrough was achieved by reversing the base64 text before attempting to decode it again.
 
-<figure><img src="../.gitbook/assets/image (32).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (32) (1).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (33).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (33) (1).png" alt=""><figcaption></figcaption></figure>
 
 Utilizing Burp Suite for the decoding process unveiled it as an AES encryption code alongside a Free Discord Nitro 2024 offer, which also included a part of the flag encoded in base64.
 
-<figure><img src="../.gitbook/assets/image (34).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (34) (1).png" alt=""><figcaption></figcaption></figure>
 
 Decoding this base64 text revealed the first segment of the flag.
 
@@ -56,11 +56,31 @@ Decoding this base64 text revealed the first segment of the flag.
 
 Further analysis led to the discovery of the AES key.
 
-<figure><img src="../.gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (35) (1).png" alt=""><figcaption></figcaption></figure>
 
 The next step involved decoding the contents of the `rj1893rj1joijdkajwda` file from base64, followed by decrypting the text using the AES key.
 
-<figure><img src="../.gitbook/assets/image (36).png" alt=""><figcaption></figcaption></figure>
+```python
+from Crypto.Cipher import AES
+from base64 import b64decode
+
+aes_key_b64 = "Y1dwaHJOVGs5d2dXWjkzdDE5amF5cW5sYUR1SWVGS2k="
+aes_key = b64decode(aes_key_b64)
+
+encrypted_data_b64 = "bEG+rGcRyYKeqlzXb0QVVRvFp5E9vmlSSG3pvDTAGoba05Uxvepwv++0uWe1Mn4LiIInZiNC/ES1tS7Smzmbc99Vcd9h51KgA5Rs1t8T55Er5ic4FloBzQ7tpinw99kC380WRaWcq1Cc8iQ6lZBP/yqJuLsfLTpSY3yIeSwq8Z9tusv5uWvd9E9V0Hh2Bwk5LDMYnywZw64hsH8yuE/u/lMvP4gb+OsHHBPcWXqdb4DliwhWwblDhJB4022UC2eEMI0fcHe1xBzBSNyY8xqpoyaAaRHiTxTZaLkrfhDUgm+c0zOEN8byhOifZhCJqS7tfoTHUL4Vh+1AeBTTUTprtdbmq3YUhX6ADTrEBi5gXQbSI5r1wz3r37A71Z4pHHnAoJTO0urqIChpBihFWfYsdoMmO77vZmdNPDo1Ug2jynZzQ/NkrcoNArBNIfboiBnbmCvFc1xwHFGL4JPdje8s3cM2KP2EDL3799VqJw3lWoFX0oBgkFi+DRKfom20XdECpIzW9idJ0eurxLxeGS4JI3n3jl4fIVDzwvdYr+h6uiBUReApqRe1BasR8enV4aNo+IvsdnhzRih+rpqdtCTWTjlzUXE0YSTknxiRiBfYttRulO6zx4SvJNpZ1qOkS1UW20/2xUO3yy76Wh9JPDCV7OMvIhEHDFh/F/jvR2yt9RTFId+zRt12Bfyjbi8ret7QN07dlpIcppKKI8yNzqB4FA=="
+encrypted_data = b64decode(encrypted_data_b64)
+
+ciphertext = encrypted_data[16:]
+
+cipher = AES.new(aes_key, AES.MODE_CBC, iv)
+decrypted_data = cipher.decrypt(ciphertext)
+
+try:
+    decrypted_text = decrypted_data.decode().rstrip('\x0c\x0b\x0a\x09\x08\x07\x06\x05\x04\x03\x02\x01')
+    print(decrypted_text)
+except Exception as e:
+    print("Error decoding the decrypted data:", e)
+```
 
 * **Import AES Cipher and base64 Decoding**: The script begins by importing the necessary components for AES decryption from the `Crypto.Cipher` module and base64 decoding functionality.
 * **Decode AES Key**: It decodes the AES key from base64 format to bytes, making it usable for decryption.
